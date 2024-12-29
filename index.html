@@ -3,54 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday Greeting Card</title>
+    <title>Birthday Card</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="card">
-        <div class="card-inner">
-            <!-- Front of the card -->
-            <div class="card-front" data-page="1">
-                <div class="flowers">
-                    <img src="flower1.png" alt="Flower 1" class="flower-img">
-                    <img src="flower2.png" alt="Flower 2" class="flower-img">
-                    <img src="flower3.png" alt="Flower 3" class="flower-img">
-                </div>
-                <h1>Happy Birthday!</h1>
-                <p class="greeting">Wishing you a special day filled with love and happiness.</p>
+    <div class="card-container">
+        <div class="card" id="card">
+            <div class="page" id="page-1" onclick="nextPage(1)">
+                <img src="balloon.png"  class="balloon">
+                <h1>Happy <br> Birthday!!</h1>
+                <img src="cake.jpg"  class="cake">
+                <h5>(Click for next page)</h5>
             </div>
-
-            <!-- Second Page of the card -->
-            <div class="card-middle" data-page="2">
-                <div class="message">
-                    <p>
-                        Dear [Name],<br><br>
-                        Wishing you a day filled with joy, laughter, and wonderful surprises. May this year bring you everything you've dreamed of. You deserve all the happiness in the world.<br><br>
-                    </p>
-                </div>
-                <div class="images">
-                    <img src="messi.jpg" alt="Image 1">
-                    <img src="ronaldo.jpg" alt="Image 2">
+            <div class="page" id="page-2" onclick="nextPage(2)">
+                <div class="content">
+                    <div class="image-row left">
+                        <img src="moumita2.jpg" alt="Image 1">
+                    </div>
+                    <p>HAPPY BIRTHDAY Anya A.K.A Gadhi...😁<br>
+                        Many many returns of the day ❤<br><br>
+                        Just remember, you’re not getting older, <br> you’re just becoming a classic—like a vintage car that needs a lot of repairs!..😆<br>
+                        I'm so glad we're friends! <br> You make me laugh, even when you're not trying to!!😏<br>
+                        You make my life more fun..... <br> and also more confusing, but that's okay!😊
+                        </p>
+                    <div class="image-row right">
+                        <img src="moumita7.jpg" alt="Image 2">
+                    </div>
                 </div>
             </div>
-
-            <!-- Third Page of the card -->
-            <div class="card-back" data-page="3">
-                <div class="message">
-                    <p>
-                        Here's to another year of beautiful memories and achievements! May your heart always be as happy as today. Enjoy every moment and cherish all the blessings in your life.<br><br>
-                        With all my love,<br>
-                        [Your Name]
-                    </p>
-                </div>
-                <div class="images">
-                    <img src="dhoni.jpg" alt="Image 3">
-                    <img src="virat.jpg" alt="Image 4">
+            <div class="page" id="page-3">
+                <div class="content">
+                    <div class="image-row left">
+                        <img src="moumita3.jpg" alt="Image 3">
+                    </div>
+                    <p>I hope your birthday is as bright as your smile..... <br> or at least much more brighter than your phone screen!!!😁<br>
+                        Here’s another year of you will pretend to be an adult but I want that, keep your childish spirit alive. <br> May your day be filled with cake, laughter, and just the right amount of chaos! Let’s celebrate before you need reading glasses to see the candles!💖😄<br><br>
+                        
+                        Again Happy birthday..🥳💕
+                        </p>
+                    <div class="image-row right">
+                        <img src="moumita1.jpg" alt="Image 4">
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="confetti-container" id="confetti-container"></div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,30 +1,30 @@
-const pages = document.querySelectorAll('.card-front, .card-middle, .card-back');
+let currentPage = 1;
 
-// Add event listeners to each page
-pages.forEach(page => {
-    page.addEventListener('click', unfoldNextPage);
-});
+function nextPage(page) {
+    if (page === 1) {
+        document.getElementById('page-1').style.transform = 'rotateY(180deg)';
+        document.getElementById('page-2').style.transform = 'rotateY(0deg)';
+    } else if (page === 2) {
+        document.getElementById('page-2').style.transform = 'rotateY(180deg)';
+        document.getElementById('page-3').style.transform = 'rotateY(0deg)';
+    }
+    startConfetti();
+}
 
-function unfoldNextPage(event) {
-    const currentPage = event.currentTarget;
-    const nextPage = getNextPage(currentPage);
-
-    if (nextPage) {
-        // Move the current page out of view
-        currentPage.style.transform = 'translateX(-100%)';
-
-        // Move the next page into view
-        nextPage.style.transform = 'translateX(0)';
-        nextPage.style.zIndex = '3'; // Bring next page to the front
+function startConfetti() {
+    const confettiContainer = document.getElementById('confetti-container');
+    for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.top = Math.random() * 100 + 'vh';
+        confetti.style.backgroundColor = getRandomColor();
+        confettiContainer.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 2000);
     }
 }
 
-function getNextPage(currentPage) {
-    const currentPageIndex = Array.from(pages).indexOf(currentPage);
-
-    if (currentPageIndex === pages.length - 1) {
-        return null; // No more pages to unfold
-    }
-
-    return pages[currentPageIndex + 1]; // Get next page in the sequence
+function getRandomColor() {
+    const colors = ['#ff6347', '#ffd700', '#1e90ff', '#32cd32', '#ff69b4'];
+    return colors[Math.floor(Math.random() * colors.length)];
 }
