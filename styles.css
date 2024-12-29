@@ -1,8 +1,11 @@
+*{
+    margin: -5px;
+}
 body {
     font-family: 'Arial', sans-serif;
     background: #f9f9f9;
     height: 100vh;
-    margin: 0;
+    
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -13,6 +16,7 @@ h1{
     font-weight: bold;
 }
 .card-container {
+    padding: 100px;
     width: 80vw;
     height: 80vh;
     display: flex;
