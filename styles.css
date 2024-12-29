@@ -1,6 +1,3 @@
-*{
-    margin: -5px;
-}
 body {
     font-family: 'Arial', sans-serif;
     background: #f9f9f9;
@@ -53,7 +50,7 @@ h1{
 #page-1 {
     background: #ffecd2;
     z-index: 3;
-    align-items: center;
+    
 }
 
 #page-2 {
@@ -75,7 +72,7 @@ img {
 }
 
 .balloon {
-    width: 300px;
+    width: 150px;
     height: auto;
     
 }
