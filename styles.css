@@ -2,18 +2,14 @@ body {
     font-family: 'Arial', sans-serif;
     background: #f9f9f9;
     height: 100vh;
-    
+    margin: 0;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-h1{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-    font-weight: bold;
-}
+
 .card-container {
-    padding: 100px;
     width: 80vw;
     height: 80vh;
     display: flex;
@@ -30,12 +26,12 @@ h1{
 }
 
 .page {
-    background: rgb(194, 183, 183);
-    border: 2px solid #050505;
+    background: white;
+    border: 2px solid #ddd;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-
+    align-items: center;
     justify-content: center;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -50,7 +46,6 @@ h1{
 #page-1 {
     background: #ffecd2;
     z-index: 3;
-    
 }
 
 #page-2 {
@@ -60,7 +55,7 @@ h1{
 }
 
 #page-3 {
-    background: #c8f75a;
+    background: #ff6347;
     transform: rotateY(-180deg);
     z-index: 1;
 }
@@ -68,37 +63,37 @@ h1{
 img {
     width: 100px;
     height: 100px;
-    
-}
-
-.balloon {
-    width: 150px;
-    height: auto;
-    
-}
-.cake{
-    width: 200px;
     border-radius: 10px;
     margin-top: 10px;
-    
 }
+
+.flowers {
+    width: 150px;
+    height: auto;
+}
+
 .content {
     width: 100%;
-    text-align: center;
+    text-align: left;
 }
 
+.image-row {
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+}
 
+.image-row img {
+    max-width: 100px;
+    max-height: 100px;
+}
 
 .image-row.left img {
-    float: left;
-    border-radius: 10px;
-    
+    margin-right: auto;
 }
 
 .image-row.right img {
-    float:right;
-    
-    border-radius: 10px;
+    margin-left: auto;
 }
 
 .confetti-container {
@@ -118,7 +113,7 @@ img {
     height: 10px;
     background: red;
     opacity: 0;
-    animation: confetti-fall 3s linear forwards;
+    animation: confetti-fall 2s linear forwards;
 }
 
 @keyframes confetti-fall {
