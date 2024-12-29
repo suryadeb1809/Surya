@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.card {
+    width: 90%;
+    max-width: 600px;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.card-front, .card-middle, .card-back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides back faces when flipped */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    transition: transform 1s ease;
+}
+
+.card-front {
+    background-color: #f1e0b4;
+    z-index: 3;
+    padding: 20px;
+}
+
+.card-middle {
+    background-color: #f9f0d5;
+    z-index: 2;
+    transform: translateX(100%); /* Initially hidden on the right */
+    padding: 20px;
+}
+
+.card-back {
+    background-color: #f2f7d5;
+    z-index: 1;
+    transform: translateX(100%); /* Initially hidden on the right */
+    padding: 20px;
+}
+
+.card-front .flowers {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.card-front .flower-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.card-front h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #3c3c3c;
+    margin-top: 80px;
+}
+
+.card-front .greeting {
+    font-size: 18px;
+    font-style: italic;
+    color: #5a5a5a;
+    margin-top: 10px;
+}
+
+.card-middle, .card-back {
+    flex-direction: column;
+}
+
+.card-middle .message, .card-back .message {
+    font-size: 18px;
+    color: #4c4c4c;
+    margin-bottom: 20px;
+}
+
+.card-middle .images, .card-back .images {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.card-middle img, .card-back img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Button Styling */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .card {
+        height: auto;
+    }
+
+    .card-inner {
+        flex-direction: column;
+    }
+
+    .card-front, .card-middle, .card-back {
+        width: 100%;
+    }
+
+    .card-middle .images, .card-back .images {
+        flex-direction: column;
+        align-items: center;
+    }
+}
